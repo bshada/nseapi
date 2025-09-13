@@ -1,0 +1,32 @@
+# Exclude sources and configs from the published package
+src/
+
+# Build config and project configs
+*.tsbuildinfo
+tsconfig*.json
+.eslintignore
+.eslintrc*
+.prettierignore
+.prettierrc*
+
+# Local/IDE
+.vscode/
+.idea/
+.DS_Store
+
+# Tests and coverage
+coverage/
+*.spec.ts
+*.test.ts
+__tests__/
+
+# Misc
+npm-debug.log*
+.npmrc
+.editorconfig
+
+# Keep dist outputs and docs included (do NOT ignore)
+# dist/
+# dist-cjs/
+# README.md
+# LICENSE
