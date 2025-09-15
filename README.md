@@ -54,6 +54,10 @@ console.log('Market state:', status);
 const currentIpo = await nse.listCurrentIPO();
 console.log('Current IPOs:', currentIpo);
 
+// IPO details (EQ or SME series)
+const urbancoIpo = await nse.getIpoDetails({ symbol: 'URBANCO', series: 'EQ' });
+console.log('URBANCO IPO details:', urbancoIpo);
+
 // Equity quote
 const quote = await nse.equityQuote('HDFCBANK');
 console.log('HDFCBANK quote:', quote);
@@ -77,7 +81,7 @@ The full list of methods is available in the `NSE` class under `src/nse/NSE.ts`.
 - Corporate: `actions()`, `announcements()`, `boardMeetings()`, `annual_reports()`
 - Quotes: `equityMetaInfo()`, `quote()`, `equityQuote()`
 - Listings/Indices: `listEquityStocksByIndex()`, `listIndices()`, `listEtf()`, `listSme()`, `listSgb()`
-- IPO: `listCurrentIPO()`, `listUpcomingIPO()`, `listPastIPO()`
+- IPO: `listCurrentIPO()`, `listUpcomingIPO()`, `listPastIPO()`, `getIpoDetails()`
 - Circulars/Deals: `circulars()`, `blockDeals()`
 - F&O Utilities: `fnoLots()`, `optionChain()`, `getFuturesExpiry()`, `compileOptionChain()`, `NSE.maxpain()`
 - Historical: `fetch_equity_historical_data()`, `fetch_historical_vix_data()`, `fetch_historical_fno_data()`, `fetch_historical_index_data()`

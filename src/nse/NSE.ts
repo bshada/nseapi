@@ -497,6 +497,12 @@ export class NSE {
     return await this.req(`${NSE.base_url}/all-upcoming-issues?category=ipo`);
   }
 
+  async getIpoDetails(params: { symbol: string; series?: "EQ" | "SME" }) {
+    const symbol = params.symbol.toUpperCase();
+    const series = params.series ?? "EQ";
+    return await this.req(`${NSE.base_url}/ipo-detail`, { symbol, series });
+  }
+
   async listPastIPO(from_date?: Date, to_date?: Date) {
     const to = to_date ?? new Date();
     const from = from_date ?? new Date(to.getTime() - 90 * 86400000);
